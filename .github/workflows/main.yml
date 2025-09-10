@@ -15,4 +15,14 @@ jobs:
           password: qwer1234
           port: 115
           script: |
-            echo test > /tmp/test
+            rm -rf ./cicd
+            git clone https://github.com/atimaby28/cicd.git
+            cd ./demo30
+            chmod 755 ./gradlew
+            ./gradlew bootJar
+            docker rm -f back
+            docker image prune -f
+            docker build --tag hanwhabootcamp17/back:latest .
+            docker run -d --name back -p 8080:8080 hanwhabootcamp17/back:latest
+
+            
