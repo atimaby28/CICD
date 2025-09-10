@@ -11,4 +11,9 @@ public class TestController {
     public String sample(){
         return "sample!!";
     }
+
+    @GetMapping("/health")
+    public String health(){
+        return "health!!";
+    }
 }
