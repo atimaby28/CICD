@@ -17,7 +17,7 @@ jobs:
           script: |
             rm -rf ./cicd
             git clone https://github.com/atimaby28/cicd.git
-            cd ./demo30
+            cd ./cicd
             chmod 755 ./gradlew
             ./gradlew bootJar
             docker rm -f back
